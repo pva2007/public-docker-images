@@ -1,5 +1,3 @@
-# command to build: docker build -t aventura_www:fpm-php8.2 .
-
 FROM php:8.2-fpm
 RUN apt-get update && apt-get install -y \
 		libfreetype-dev \
