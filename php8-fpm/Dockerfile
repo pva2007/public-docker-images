@@ -9,3 +9,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure zip \
     && docker-php-ext-install -j$(nproc) zip
 RUN apt-get clean
+
+# adoptions to fpm config
+RUN echo 'pm.max_children = 15' >> /usr/local/etc/php-fpm.d/zz-docker.conf && echo 'pm.max_requests = 500' >> /usr/local/etc/php-fpm.d/zz-docker.conf
